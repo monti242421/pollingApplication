@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VoteWave-SignIn</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="outer-box">
+        <div class="inner-box">
+            <header class="signup-header">
+                <h1>Login</h1>
+            </header>
+            <main class="signup-body">
+                <form action="#" id="signin">
+                    <p>
+                        <label for="">Email</label>
+                        <input type="email" id="email" placeholder="monti242421@gmail.com" required>
+                    </p>
+                    <p>
+                        <label for="">Password</label>
+                        <input type="password" id="password" placeholder="at least 8 characters" required>
+                    </p>
+                    <p>            
+                        <input type="submit" value="Login">
+                    </p>
+                    <p id="error" style="color: red;">
+                    </p>
+
+                </form>
+
+            </main>
+
+            <footer>
+                <p><a href="#" id="forgetpassword">Forgotten password?</a></p>
+
+                <form action="" id="forgetpasswordform" hidden>
+                    <label for="">Please enter your Email id</label>
+                    <input type="email" id="forgetpasswordemail" name="" >
+                    <button type="submit">Submit</button>
+                </form>
+                <input type="submit" id ="signup" value="Create new account">
+            </footer>
+
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

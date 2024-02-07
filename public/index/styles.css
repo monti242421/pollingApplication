@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Lato', sans-serif;
+}
+
+.outer-box{
+    width: 100vw;
+    height: 100vh;
+    background-color: azure;
+}
+
+header{
+    background-color:darkred;
+    color: white;
+    font-size: 2rem;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.main-body{
+    display: grid;
+    gap: 4px;
+    grid-template-columns: repeat(4,1fr);
+    grid-auto-rows: 40px;
+}
+
+.box{
+    border: 2px solid #cccc;
+    border-radius: 8px;
+}
+
+#box-1{
+    background-color: white;
+    grid-column: 1/4;
+    grid-row: span 10;
+    overflow: auto;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-auto-rows: 40px;
+    gap: 9px;
+}
+
+#box-1 .messages{
+    background-color: rgb(232, 234, 240);
+    width:max-content;
+    padding: 1px 5px;
+    border: 1px solid #cccc;
+    border-radius: 4px;
+    box-shadow: 2px 2px 5px #3498db;
+    margin: 5px;
+    margin-left: 30px;
+    
+}
+
+#box-1 #chatbox{
+    grid-column: 1/4;
+    grid-row: 2/10;
+}
+#box-1 #header01{
+    padding-left: 45%;
+    background-color:crimson;
+    color: white;
+    font-family: 'Lato', sans-serif;
+    border: 1px solid #cccc;
+    border-radius: 4px;
+    grid-column: 1/5;
+    grid-row: 1/2;
+}
+
+#box-1 #votesection{
+    background-color: floralwhite;
+    border: 1px solid #cccc;
+    border-radius: 4px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    grid-column: 4/5;
+    grid-row: 2/10;
+}
+
+#box-1 #votesection #online{
+    background-color: aliceblue;
+    border: 1px solid #cccc;
+    border-radius: 4px;
+    padding: 2px;
+    margin: 2px;
+}
+#box-1 #votesection #alloptions{
+    background-color: aliceblue;
+    height: 80%;
+    border: 1px solid #cccc;
+    border-radius: 4px;
+    padding: 2px;
+    padding-top: 20px;
+    margin: 2px;
+}
+
+#box-1 #votesection #alloptions div{
+   width: 50%;
+   margin-left: 20px;
+   margin-bottom: 2px;
+}
+#box-1 #votesection #votesubmission{
+    background-color: aliceblue;
+    border: 1px solid #cccc;
+    border-radius: 4px;
+    
+    padding: 10px;
+    padding-left: 40px;
+    margin: 2px;
+}
+
+#box-1 #votesection #votesubmission input{
+    width: 80%;
+    padding: 1px;
+    border: 2px solid #cccc;
+    border-radius: 4px;
+    font-size: 1.5rem;
+
+}
+
+#box-1 #votesection #votesubmission input[type="submit"]{
+    background-color: #3498db;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+#box-1 #votesection #votesubmission input[type="submit"]:hover{
+    background-color: #185a86;
+    cursor: pointer;
+}
+
+
+
+/* #box-1 #votesection #allmembers label {
+    background-color:white;
+    border: 1px solid #cccc;
+    border-radius: 4px;
+    padding: 2px;
+    margin-top: 5px;
+    margin: 5px;
+} */
+
+
+
+
+#box-2{
+    background-color:whitesmoke;
+    grid-column: 4/5;
+    grid-row: 1/8;
+    padding: 20px;
+}
+
+#box-4{
+    background-color: white;
+    grid-column: 4/5;
+    grid-row: 8/12;
+    padding-top: 4px;
+    padding-left: 10%;
+}
+
+#box-3{
+    background-color: #20537e;
+    grid-column: span 3;
+    /* grid-row: span 4; */
+    padding-top: 2px;
+    padding-left: 1%;
+    position: relative;
+}
+
+#box-3  input[type="text"]{
+    width: 40%;
+    height: 90%;
+    font-family: 'Lato', sans-serif;
+}
+#box-3 button[type="submit"]{
+    background-color:white;
+    height: 90%;
+    width: 70px;
+    font-family: 'Lato', sans-serif;
+}
+#box-3 button[type="submit"]:hover{
+    background-color:#3498db;
+    cursor: pointer;
+}
+
+li{
+    border: 1px solid #cccc;
+    padding: 4px;
+    margin: 2px;
+    display: flex;
+    justify-content:space-between;
+}
+
+li .btn-danger{
+    background-color: #3498db;
+    cursor: pointer;
+    width: 60px;
+    height: 30px;
+    border: none;
+    border-radius: 4px;
+    font-family: 'Lato', sans-serif;
+}
+#box-4 p {
+    margin: 5px;
+}
+#box-4 p label{
+    display: block;
+}
+#box-4 button{
+    background-color:white;
+    padding: 5px;
+    font-family: 'Lato', sans-serif;
+}
+#box-4 button:hover{
+    background-color:#3498db;
+    cursor: pointer;
+}
+#box-4 input{
+    width: 100%;
+    font-family: 'Lato', sans-serif;
+}
+
+#box-2 h3{
+    margin-bottom: 10px;
+    border: 1px solid #cccc;
+    border-radius: 3px;
+    padding: 5px;
+    padding-left: 10%;
+}
+
+#box-2 .boxlive{
+    margin-bottom: 2px;
+    border: 1px solid #cccc;
+    padding: 2px;
+}
+
+#box-2 button {
+    background-color:white;
+    margin-left:10px;
+    padding: 5px;
+    font-family: 'Lato', sans-serif;
+    border: 1px solid #cccc;
+    border-radius: 4px;
+}
+#box-2 button:hover{
+    background-color:#3498db;
+    cursor: pointer;
+}
+
+#box-4 #error{
+    font-size: 0.8rem;
+}
+#box-4 p #makeadmin {
+    width: 15px;
+}
+#box-4 p #makeitblock{
+    display: inline;
+    font-size: 0.8rem;
+}
+
+table, th, td {
+    border:1px solid black;
+  }

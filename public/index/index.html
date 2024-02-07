@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vote Wave</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="outer-box">
+        <header>
+            <p>Vote Wave</p>
+        </header>
+        <div class="main-body">
+
+            <div class="box" id="box-1">
+                <div>cool</div>
+                <div id="header01">Chat Window</div>
+                <div id="chatbox">
+                    <!-- <div class="messages">Hi</div> -->
+                    <div id="mask"></div>
+                </div>
+
+                <div id="votesection">
+                    <div id="online">Online Poll <span style="color: rgb(0, 255, 0);"> ●</span></div>
+                    <div id="alloptions">
+                            <p>Please vote for your prefrential Political Party.</p>
+                            <br>
+                            <!-- <div>
+                            <input type="radio" id="BJP" name="politicalParty" value="BJP">
+                            <label for="BJP">BJP</label>
+                            </div>
+
+                            <div>
+                            <input type="radio" id="INC" name="politicalParty" value="INC">
+                            <label for="INC">INC</label>
+                            </div>
+                            
+                          <div>
+                            <input type="radio" id="AAP"  name="politicalParty" value="AAP">
+                            <label for="AAP">AAP</label>
+                          </div>
+                            
+                          <div>
+                            <input type="radio" id="CPI" name="politicalParty" value="CPI">
+                            <label for="CPI">CPI</label>
+                          </div>
+
+                          <div>
+                            <input type="radio" id="BSP" name="politicalParty" value="BSP">
+                            <label for="BSP">BSP</label>
+                          </div>
+
+                          <div>
+                            <input type="radio" id="JD"  name="politicalParty" value="JD">
+                            <label for="JD">JD</label>
+                          </div>
+                            
+                           <div>
+                            <input type="radio" id="SWA" name="politicalParty" value="SWA">
+                            <label for="SWA">SWA</label>
+                          </div>
+                            
+                            <div>
+                            <input type="radio" id="NCP" name="politicalParty" value="NCP">
+                            <label for="NCP">NCP</label>
+                          </div> -->
+
+                          <div>
+                            <input type="radio" id="BJP" name="politicalParty" value="BJP">
+                            <label for="BJP">BJP</label>
+                          </div>
+                          <div>
+                            <input type="radio" id="INC" name="politicalParty" value="INC">
+                            <label for="INC">INC</label>
+                          </div>
+                          <div>
+                            <input type="radio" id="AAP" name="politicalParty" value="AAP">
+                            <label for="AAP">AAP</label>
+                          </div>
+                          
+                          <div>
+                            <input type="radio" id="CPI" name="politicalParty" value="CPI">
+                            <label for="CPI">CPI</label>
+                          </div>
+                          <div>
+                            <input type="radio" id="BSP" name="politicalParty" value="BSP">
+                            <label for="BSP">BSP</label>
+                          </div>
+                          <div>
+                            <input type="radio" id="JD" name="politicalParty" value="JD">
+                            <label for="JD">JD</label>
+                          </div>
+                          <div>
+                            <input type="radio" id="SWA" name="politicalParty" value="SWA">
+                            <label for="SWA">SWA</label>
+                          </div>
+                          <div>
+                            <input type="radio" id="NCP" name="politicalParty" value="NCP">
+                            <label for="NCP">NCP</label>
+                          </div>
+                            
+                            
+                          
+                        
+                    </div>
+                    <div id="votesubmission">
+                        <input type="submit" id="submitvote" value="Submit">
+                    </div> 
+                </div>
+                
+            </div>
+            <div class="box" id="box-2">
+                <h3>Live Vote Counts  </h3>
+                <div class="box" id = "livevotes">
+                    
+                    <table style="width:100%">
+                        <tr>
+                            <th>BJP</th>
+                            <th id="liveBJP">0</th>
+                        </tr>
+                        <tr>
+                            <th>INC</th>
+                            <th id="liveINC">0</th>
+                        </tr>
+                        <tr>
+                            <th>AAP</th>
+                            <th id="liveAAP">0</th>
+                        </tr>
+                        <tr>
+                            <th>CPI</th>
+                            <th id="liveCPI">0</th>
+                        </tr>
+                        <tr>
+                            <th>BSP</th>
+                            <th id="liveBSP">0</th>
+                        </tr>
+                        <tr>
+                            <th>JD</th>
+                            <th id="liveJD">0</th>
+                        </tr>
+                        <tr>
+                            <th>SWA</th>
+                            <th id="liveSWA">0</th>
+                        </tr>
+                        <tr>
+                            <th>NCP</th>
+                            <th id="liveNCP">0</th>
+                        </tr>
+
+                    </table>
+                   
+                </div>
+            </div>
+
+            <div class="box" id="box-3">
+                <input type="text" id="chatmessage" required>
+                <button type="submit" id="sendmessage">Send</button>
+            </div>
+            
+         </div>
+
+         <button type="button" id="mute">Mute</button>
+
+         
+
+    </div>
+    
+    
+  
+  
+        
+    
+    
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    
+    <script src="main.js"></script>
+    
+</body>
+</html>

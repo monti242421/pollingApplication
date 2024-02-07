@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VoteWave-SignUp</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="outer-box">
+        <div class="inner-box">
+            <header class="signup-header">
+                <h1>SignUp</h1>
+                <p>It just take 30 seconds</p>
+            </header>
+            <main class="signup-body">
+                <form action="#" id="signup">
+                    <p>
+                        <label for="">Full Name</label>
+                        <input type="text" id="username" placeholder="Username " required>
+                    </p>
+                    <p>
+                        <label for="">Email</label>
+                        <input type="email" id="email" placeholder="monti242421@gmail.com" required>
+                    </p>
+
+                    <p>
+                        <label for="">Phone Number</label>
+                        <input type="text" id="phonenumber" placeholder="871215xxxx" required>
+                    </p>
+                    <p>
+                        <label for="">Password</label>
+                        <input type="password" id="password" placeholder="at least 8 characters" required>
+                    </p>
+                    <p>
+                
+                        <input type="submit" value="Create Account">
+                    </p>
+
+                    <p id="error" style="color: red;">
+                    </p>
+                </form>
+
+
+            </main>
+
+            <footer>
+                <p>Already have an account? <a href='../signin/signin.html'>Login</a></p>
+            </footer>
+
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
