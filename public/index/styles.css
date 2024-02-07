@@ -59,10 +59,24 @@ header{
     
 }
 
-#box-1 #chatbox{
-    grid-column: 1/4;
+#box-1 #livechat{
+    grid-column: 1/3;
     grid-row: 2/10;
+    border: 2px solid #cccc;
+    position: relative;
+    overflow-y: hidden;
+    overflow-x: hidden;
 }
+
+#box-1 #chatbox{
+    bottom: 0px;
+    width: 100%;
+    margin-left: 100px;
+    padding: 10px;
+    position: absolute;
+}
+
+
 #box-1 #header01{
     padding-left: 45%;
     background-color:crimson;

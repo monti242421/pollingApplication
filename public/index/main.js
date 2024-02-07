@@ -177,16 +177,13 @@ let mute=true;
 async function muteUnmute(){
     if(mute){
         muteButton.innerHTML='Unmute live chat ';
-       chatbox.style.backgroundColor ='black'; 
        document.getElementById('sendmessage').setAttribute("disabled", "");
-
-       document.getElementById('header01').innerHTML="All chat notifications has been muted"
+       document.getElementById('livechathead').innerHTML="(muted)"
         mute=false;
     }else{
         muteButton.innerHTML='Mute live chat';
-        document.getElementById('header01').innerHTML="Chat Window"
         document.getElementById('sendmessage').removeAttribute("disabled");
-        chatbox.style.backgroundColor ='white'; 
+        document.getElementById('livechathead').innerHTML=""
         mute=true;
     }
     
