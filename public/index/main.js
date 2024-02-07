@@ -176,14 +176,14 @@ muteButton.addEventListener('click', muteUnmute);
 let mute=true;
 async function muteUnmute(){
     if(mute){
-        muteButton.innerHTML='Unmute';
+        muteButton.innerHTML='Unmute live chat ';
        chatbox.style.backgroundColor ='black'; 
        document.getElementById('sendmessage').setAttribute("disabled", "");
 
        document.getElementById('header01').innerHTML="All chat notifications has been muted"
         mute=false;
     }else{
-        muteButton.innerHTML='Mute';
+        muteButton.innerHTML='Mute live chat';
         document.getElementById('header01').innerHTML="Chat Window"
         document.getElementById('sendmessage').removeAttribute("disabled");
         chatbox.style.backgroundColor ='white'; 
@@ -193,6 +193,29 @@ async function muteUnmute(){
     console.log(mute)
 }
 
+
+
+document.getElementById('showmyhistory').onclick = async function showmyhistory(e){
+    e.preventDefault();
+    try{
+        const token = localStorage.getItem("token")
+        const allchats = await axios.get("http://localhost:4000/chats/getmychat/",{headers:{"Authorization":token}})
+        console.log(allchats);
+        document.getElementById('allhistory').innerHTML='';
+        for(let i=0;i<allchats.data.result.length;i++){
+            displaymychats(allchats.data.result[i]);
+        }
+    }catch(err){
+        console.log(err);
+    }
+}
+
+function displaymychats(data){
+    var chat = data.text;
+    var div =document.createElement("div"); 
+    div.innerHTML=chat;  
+    document.getElementById('allhistory').appendChild(div);
+}
 
 
 

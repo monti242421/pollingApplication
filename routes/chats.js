@@ -5,6 +5,7 @@ const userautherization = require('../middleware/auth');
 
 
 router.get('/chats/getchat',userautherization.authenticate,chatcontroller.getChat)
+router.get('/chats/getmychat',userautherization.authenticate,chatcontroller.getmychat)
 
 
 module.exports = router;

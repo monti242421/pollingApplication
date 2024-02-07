@@ -84,6 +84,42 @@ header{
     grid-row: 2/10;
 }
 
+#box-1 #chathistory{
+    background-color: floralwhite;
+    border: 1px solid #cccc;
+    border-radius: 4px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    grid-column: 3/4;
+    grid-row: 2/10;
+}
+#box-1 #chathistory #history{
+    background-color: aliceblue;
+    border: 1px solid #cccc;
+    border-radius: 4px;
+    padding: 2px;
+    margin: 2px;
+}
+
+#box-1 #chathistory #allhistory{
+    background-color: aliceblue;
+    height: 80%;
+    border: 1px solid #cccc;
+    border-radius: 4px;
+    padding: 2px;
+    padding-top: 20px;
+    margin: 2px;
+    overflow: scroll;
+}
+
+#box-1 #chathistory #allhistory div{
+    background-color: antiquewhite;
+    margin-bottom: 3px;
+}
+
+
+
+
 #box-1 #votesection #online{
     background-color: aliceblue;
     border: 1px solid #cccc;
@@ -268,4 +304,10 @@ li .btn-danger{
 
 table, th, td {
     border:1px solid black;
+  }
+
+  .delete{
+    margin-left: 20px;
+    padding: 2px;
+    
   }
