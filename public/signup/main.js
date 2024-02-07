@@ -21,7 +21,7 @@ async function  signUp(e){
     };
     try{
 
-    var res = await axios.post("http://localhost:4000/user/adduser",myobj)
+        await axios.post("http://localhost:4000/user/adduser",myobj)
         alert("SignupCompleted");
         window.location= '../signin/signin.html';
     }         

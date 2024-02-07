@@ -11,14 +11,10 @@ function isStringInvalid(string){
     }
 }
 
-exports.generateAccessToken = (id,username,ispremiumuser)=>{
-    return jwt.sign({userId:id, username:username,ispremiumuser},process.env.TOKEN_SECRET)
-}
 
-function generateAccessToken (id,username,ispremiumuser){
-    return jwt.sign({userId:id, username:username,ispremiumuser},process.env.TOKEN_SECRET)
+function generateAccessToken (id,username){
+    return jwt.sign({userId:id, username:username},process.env.TOKEN_SECRET)
 }
-
 
 
 exports.addUser= async (req,res,next)=>{
@@ -39,8 +35,6 @@ exports.addUser= async (req,res,next)=>{
             password:hash
         })
 
-        await admin.create({
-        })
         res.status(201).json({message:'successfully created new user'});
 
         }catch(err){
@@ -75,7 +69,7 @@ exports.login = async (req,res,next)=>{
                     throw new Error("Something Went Wrong");
                 }
                 if(resultPass===true){
-                    res.status(201).json({message:"Successfully logged in", token:generateAccessToken(result[0].dataValues.id,result[0].dataValues.username,result[0].dataValues.ispremiumuser)})
+                    res.status(201).json({message:"Successfully logged in", token:generateAccessToken(result[0].dataValues.id,result[0].dataValues.username)})
                 } else{
                     return res.status(400).json({message: "Incorrect Password"})
                 }

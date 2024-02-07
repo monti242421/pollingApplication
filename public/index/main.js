@@ -3,11 +3,16 @@ const socket = io({auth: {
     token: token
 }});
 
+// setting the profile username to the logged in user name
+const decodedtoken = parseJwt(token);
+document.getElementById("username01").innerHTML = "Profile:  "+ decodedtoken.username ;
+
+
+// below code works with the live chat functionality
 document.getElementById('sendmessage').onclick = async function addmessage(e){
         e.preventDefault();
         const token = localStorage.getItem("token")
         const chatmessage = document.getElementById("chatmessage").value
-       // const groupname = document.getElementById("groupmessages").innerHTML
         const decodedtoken = parseJwt(token);
         var myobj = {
             chatmessage : decodedtoken.username+'- '+chatmessage,
@@ -29,10 +34,12 @@ document.getElementById('submitvote').onclick =async function addvote(e){
     e.preventDefault();
     const uservote = document.querySelector("input[type='radio'][name=politicalParty]:checked").value;
     socket.emit('user-vote',uservote,{headers:{"Authorization":token}});
-    alert("Your vote has been successfully submitted");
+    //alert("Your vote has been successfully submitted");
     //console.log(uservote);
 }
-const decodedtoken = parseJwt(token);
+
+
+
 function showDataToScreen(data){
    
     var chat = data.text;
@@ -48,7 +55,6 @@ function showDataToScreen(data){
     div.appendChild(del);
     }   
     document.getElementById('chatbox').appendChild(div);
-    //console.log(data);
 }
 
 function parseJwt (token) {
@@ -112,7 +118,6 @@ socket.on('message',(message)=>{
                 var chat = message.text;
                 var div =document.createElement("div");
                 div.className="messages"
-                console.log(message);
                 div.id=message.id;
                 div.innerHTML=chat;
                 if(chat.split('-')[0] == decodedtoken.username){
@@ -124,7 +129,6 @@ socket.on('message',(message)=>{
                 document.getElementById('chatbox').appendChild(div);
                 document.getElementById("chatmessage").value='';
                 
-
                 const recentchats = JSON.parse(localStorage.getItem('recentchats'));              
                 recentchats.unshift(message)
                 if(recentchats.length>10){
@@ -135,9 +139,9 @@ socket.on('message',(message)=>{
 })
 
 socket.on('votecount',(message)=>{
-    console.log(message);
     const id="live"+message.topic;
     document.getElementById(id).innerText = message.vote;
+    alert(" Your vote has been successfully submitted");
 })
 
 
@@ -152,8 +156,7 @@ chatbox.addEventListener('click',deleteMessage);
 async function deleteMessage(e){
     if(e.target.classList.contains("delete")){
         try{
-        var item = e.target.parentElement; 
-        console.log(item.id);    
+        var item = e.target.parentElement;    
         socket.emit('delete-message',item.id,{headers:{"Authorization":token}}); 
 
         }catch(err){
@@ -167,7 +170,7 @@ async function deleteMessage(e){
 socket.on('successfullydeleted',(message)=>{
     const item = document.getElementById(message);
     chatbox.removeChild(item);
-    console.log(message);
+    
 })
 
 
@@ -187,7 +190,7 @@ async function muteUnmute(){
         mute=true;
     }
     
-    console.log(mute)
+
 }
 
 
@@ -197,7 +200,6 @@ document.getElementById('showmyhistory').onclick = async function showmyhistory(
     try{
         const token = localStorage.getItem("token")
         const allchats = await axios.get("http://localhost:4000/chats/getmychat/",{headers:{"Authorization":token}})
-        console.log(allchats);
         document.getElementById('allhistory').innerHTML='';
         for(let i=0;i<allchats.data.result.length;i++){
             displaymychats(allchats.data.result[i]);
